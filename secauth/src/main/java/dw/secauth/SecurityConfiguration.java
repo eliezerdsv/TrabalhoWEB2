@@ -1,9 +1,11 @@
 package dw.secauth;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+@Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final String clientId;
@@ -21,7 +23,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
         http.csrf()
                 .and()
                 .authorizeRequests(authz -> authz.mvcMatchers("/")
@@ -36,5 +37,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .clearAuthentication(true)
                 .deleteCookies("JSESSIONID");
     }
-
 }
