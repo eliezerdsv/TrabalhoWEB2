@@ -27,7 +27,7 @@ public class ArtigoControle {
 
     @GetMapping("/artigos/novo")
     public String novoArtigo(@ModelAttribute("artigo"), Artigo artigo);
-        return "form";
+        return "formulario";
     }
 
     @GetMapping("/artigos/{id}")
