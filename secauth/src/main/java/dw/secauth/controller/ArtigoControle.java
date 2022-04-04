@@ -26,20 +26,29 @@ public class ArtigoControle {
     }
 
     @GetMapping("/artigos/novo")
-    public String novoArtigo(@ModelAttribute("artigo"), Artigo artigo);
+    public String novoArtigo(@ModelAttribute("artigo") Artigo artigo){
         return "formulario";
     }
+        
+    
 
     @GetMapping("/artigos/{id}")
     public String alterarArtigo(@PathVariable("id") long id, Model model){
-        Optional<Artigo> findById = rep.findById(id);
+        Optional<Artigo> a = rep.findById(id);
+        if(!a.isPresent()){
+            throw new IllegalArgumentException("Artigo invalido");
+
+        }
+        model.addAttribute("artigo", a.get());
+        return "formulario";
     }
         
-    }
+    
 
     @PostMapping("/artigos/salvar")
-    public String salvarArtigo(@ModelAttribute("artigo"), Artigo artigo);
-    rep.save(artigo);    
-    return "redirect:/artigos";
+    public String salvarArtigo(@ModelAttribute("artigo") Artigo artigo){
+        rep.save(artigo);    
+        return "redirect:/artigos";
     }
+    
 }

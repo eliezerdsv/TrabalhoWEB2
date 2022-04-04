@@ -6,6 +6,7 @@ import dw.secauth.model.Artigo;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ArtigoRepository extends JpaRepository<Artigo, Long>{
 
@@ -13,4 +14,5 @@ public interface ArtigoRepository extends JpaRepository<Artigo, Long>{
 
     List<Artigo> findByTituloContaining(String titulo);
     
+    Optional<Artigo> findByID(Long ID);
 }
