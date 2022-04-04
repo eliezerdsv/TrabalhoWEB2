@@ -15,6 +15,6 @@ public class ArtigoControle {
     @GetMapping("/artigos")
     public String artigos(Model model){
         model.addAttribute("listaArtigos",rep.findAll());
-        return "/artigos/lista";
+        return "lista";
     }
 }
