@@ -8,6 +8,7 @@ import dw.secauth.repository.ArtigoRepository;
 @Controller
 public class ArtigoControle {
     private ArtigoRepository rep;
+    
     public ArtigoControle(ArtigoRepository repository){
         this.rep = repository;
     }

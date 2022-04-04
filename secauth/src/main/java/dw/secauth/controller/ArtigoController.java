@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import dw.secauth.*;
+//import dw.secauth.*;
 import dw.secauth.model.Artigo;
 import dw.secauth.repository.ArtigoRepository;
 
