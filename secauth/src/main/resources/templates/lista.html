@@ -11,8 +11,7 @@ crossorigin="anonymous">
 </head>
 <body>
 	<div class="container my-2">
-		<a th:href="@{/artigos/novo}" class="btn btn-primary btn-sm mb-3">Incluir Artigo</a>
-		<h1>Artigos</h1>
+		<h1>Lista de Artigos</h1>
 		<table border="1" class="table table-striped table-responsive-md">
 			<thead>
 				<tr>
@@ -28,11 +27,17 @@ crossorigin="anonymous">
 					<td th:text="${artigo.id}"></td>
 					<td th:text="${artigo.titulo}"></td>
 					<td th:text="${artigo.resumo}"></td>
-					<td th:text="${artigo.publicado}"></td>
+					<td th:text="${artigo.publicado} ? 'Publicado': 'Não publicado'"></td>
+					<td>
+						<a th:href="@{/artigos/{id}(id=${artigo.id})}" class="btn btn-primary col-4">Alterar</a>
+						<a th:href="@{/artigos/excluir/{id}(id=${artigo.id})}" class="btn btn-danger col-4">Excluir</a>			
+					</td>
 				</tr>
-				
 			</tbody>
 		</table>
+		<a th:href="@{/artigos/novo}" class="btn btn-primary">Incluir Artigo</a>
+		<a th:href="@{/artigos/excluirtodos}" class="btn btn-danger">Excluir Todos</a>
+		<a th:href="@{/}" class="btn btn-primary col-2"> Tela principal</a>
 	</div>
 </body>
 </html>

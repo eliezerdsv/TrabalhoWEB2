@@ -9,18 +9,29 @@ crossorigin="anonymous">
 
 </head>
 <body>
-
 	<div class="container my-2">
-		<h2>Artigos</h2>
-		<form action="#" th:action="@{/rh/artigos/salvar}" th:object="${artigo}" method="POST">
-		
-			<input type="text" th:field="*{titulo}" placeholder="Título" class="form-control mb-4 col-4">
-      		<input type="text" th:field="*{resumo}" placeholder="Resumo" class="form-control mb-4 col-4">
-        
-			<button type="submit" class="btn btn-info col-2">Salvar</button>
+		<h2>Formulário de Artigo</h2>
+		<form action="#" th:action="@{/artigos/salvar}" th:object="${artigo}" method="POST">
+			<input type="hidden" id="id" th:field="*{id}">
+			<input type="text" th:field="*{titulo}" placeholder="Título" class="form-control mb-4 col-4" required>
+      		<textarea th:field="*{resumo}" placeholder="Resumo" rows="5" class="form-control" required></textarea>
+			<label>O Artigo foi publicado?</label>
+			<div class="form-check">
+				<input class="form-check-input" value="1" type="radio" th:field="*{publicado}" name="flexRadioDefault" id="flexRadioYes" checked>
+				<label class="form-check-label" for="flexRadioYes">
+				  Sim
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" value="0" type="radio" th:field="*{publicado}" name="flexRadioDefault" id="flexRadioNo">
+				<label class="form-check-label" for="flexRadioNo">
+				  Não
+				</label>
+			</div>
+			<button type="submit" class="btn btn-primary col-2">Salvar</button>
+			<a th:href="@{/artigos}" class="btn btn-primary col-2"> Voltar para Lista</a>
 		</form>
-		<hr>
-		<a th:href="@{/artigos}">Retornar para a lista de pessoas</a>
+		
 	</div>
 </body>
 </html>
