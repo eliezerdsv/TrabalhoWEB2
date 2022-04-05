@@ -50,5 +50,17 @@ public class ArtigoControle {
         rep.save(artigo);    
         return "redirect:/artigos";
     }
+
+
+    @GetMapping("/artigos/excluir/{id}")
+    public String excluirArtigo(@PathVariable("id") long id, Model model){
+        Optional<Artigo> a = rep.findById(id);
+        if(!a.isPresent()){
+            throw new IllegalArgumentException("Artigo invalido");
+
+        }
+        rep.delete(a.get());
+        return "redirect:/artigos";
+    }
     
 }
