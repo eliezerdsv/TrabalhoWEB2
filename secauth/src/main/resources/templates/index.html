@@ -25,10 +25,9 @@
                 <div sec:authorize="isAuthenticated()">
 					<div>
 						<a th:href="@{/artigos}" class="btn btn-primary"> Editora</a>
+						<a th:href="@{/logout}" class="btn btn-danger"> Logout</a>
 					</div>
-					<form method="post" th:action="@{/logout}">
-						<input type="submit" class="btn btn-danger" value="Logout" />
-					</form>
+					
 				</div>
 				
 				<div sec:authorize="isAnonymous()">
