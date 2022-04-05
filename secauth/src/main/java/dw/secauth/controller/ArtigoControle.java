@@ -35,21 +35,17 @@ public class ArtigoControle {
     @GetMapping("/artigos/{id}")
     public String alterarArtigo(@PathVariable("id") long id, Model model){
         Optional<Artigo> a = rep.findById(id);
-
-        System.out.println(a);
         if(!a.isPresent()){
             throw new IllegalArgumentException("Artigo invalido");
 
         }
         model.addAttribute("artigo", a.get());
-        System.out.println(a.get());
         return "formulario";
     }
         
     
     @PostMapping("/artigos/salvar")
     public String salvarArtigo(@ModelAttribute("artigo") Artigo artigo, @RequestParam(required = false) String id){
-        System.out.println(artigo);
         if (id != null) {
             artigo.setId(new Long(id));
         }
