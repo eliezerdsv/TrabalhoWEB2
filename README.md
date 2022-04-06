@@ -15,8 +15,9 @@
 ### Instruções de acesso
 
 <p>Acessar o link: http://localhost:8080/secauth<br>
-Utilizar o email = vaknakaydu@vusra.com<br>
-Utilizar a senha = Teste_123<br>
+Para o acesso ao sistema pode-se cadastrar um novo usuário ou utilizar as credenciais abaixo:<br>
+email = vaknakaydu@vusra.com<br>
+senha = Teste_123<br>
 </p>
 
 ### Descrições
