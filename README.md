@@ -22,8 +22,8 @@ Utilizar a senha = Teste_123<br>
 ### Descrições
 
 <p>-http://localhost:8080/secauth/artigos -> Direciona para a lista de artigos. A tabela de artigos possuí os dados dos artigos, é possível editar ou remover um artigo individualmente utilizando os botões da tabela. Para excluir todos os artigos ou cadastrar novos, deve-se utilizar os botões abaixo da tabela.<br>
--http://localhost:8080/secauth/artigos/novo -> Direciona para o formulário de artigos, utilizado tanto para o cadastro quanto para a edição de artigos.<br> 
--http://localhost:8080/secauth/artigos/{id} -> Utilizado para a edição de artigos.<br> 
+-http://localhost:8080/secauth/artigos/novo -> Direciona para o formulário de artigos em branco o qual é utilizado para o cadastro de novos artigos.<br> 
+-http://localhost:8080/secauth/artigos/{id} -> Direciona para o formulário de artigos preenchido o qual é utilizado para a edição de artigos.<br> 
 -http://localhost:8080/secauth/artigos/excluir/{id} -> Exclusão de um artigo por ID.<br>
 -http://localhost:8080/secauth/artigos/excluirtodos -> Exclusão de todos os artigos.
 </p>
